@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activos TI</title>
+</head>
+    <app-header></app-header>
+    <body>
+    <div class="col mt-4 p-3 border">
+      <div class="row ">
+        <div class="col">
+          <button type="button" class="btn btn-primary"  (click)="nuevoElemento()">Nuevo Registro</button>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control"  placeholder="Nombre">
+        </div>
+        <div class="col">
+          <i class="fas fa-search" style="margin-right: 15px;" ></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-4" >
+      <div class="card">
+          <div class="card-body">
+            <span class="h3">Lista Activos</span>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">idcredito</th>
+                  <th scope="col">F.Solicitud</th>
+                  <th scope="col">Banco</th>
+                  <th scope="col">Cant.Retiro</th>
+                  <th scope="col">Cuota</th>
+                  <th scope="col">Contracto</th>
+                  <th scope="col">F.ProxPago</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Editar</th>
+                  <th scope="col">Eliminar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of itemActivos; let indice=index" >
+                  <td>{{item.idcreditos}}</td>
+                  <td>{{item.fechaprestamo}}</td>
+                  <td>{{item.banco}}</td>
+                  <td>{{item.cantretiro}}</td>
+                  <td>{{item.cuota}}</td>
+                  <td>{{item.nrocontracto}}</td>
+                  <td>{{item.fechaproxpago}}</td>
+                  <td>{{item.estado}}</td>
+                  <td>
+                    <i class="fas fa-edit text-info " style="margin-right: 7px;" (click)="EditarFila(item.idcreditos)"></i>
+                  </td>
+                  <td>
+                    <i class="fas fa-trash-alt text-danger " ></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
+</body>
+</html>

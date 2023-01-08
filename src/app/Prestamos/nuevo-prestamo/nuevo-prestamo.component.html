@@ -1,0 +1,55 @@
+<app-header></app-header>
+<div class="container pt-4">
+  <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+          <div class="card">
+              <div class="card-body">
+                  <h5>Agregra Nuevo Prestamo</h5>
+                  <form class="mt-4" [formGroup]="createNewPrestamo" (ngSubmit)="agregarPrestamo()">
+                      <div class="row">
+                          <div class="col">
+                              <input type="date" class="form-control" formControlName="fechaprestamo" placeholder="Fecha Prestamo">
+                          </div>
+                          <div class="col">
+                              <input type="text" class="form-control" formControlName="banco" placeholder="Banco">
+                          </div>
+                      </div>
+                      <div class="row mt-2">
+                          <div class="col">
+                              <input type="number" class="form-control" formControlName="idgasto" placeholder="Gasto">
+                          </div>
+                          <div class="col">
+                              <input type="text" class="form-control" formControlName="cantretiro" placeholder="Cantidad Retiro">
+                          </div>
+                      </div>
+                      <div class="row mt-2">
+                          <div class="col">
+                            <input type="text" class="form-control" formControlName="cuota" placeholder="Valor Cuota">
+                          </div>
+                          <div class="col ">
+                            <input type="text" class="form-control" formControlName="nrocontracto" placeholder="Numero contracto">
+                          </div>
+                          
+                          
+                      </div>
+                      <div class="row mt-2">
+                         <div class="col ">
+                            <input type="date" class="form-control" formControlName="fechaproxpago" placeholder="Proximo Pago">
+                         </div>  
+                         <div class="col">
+                              <input type="text" class="form-control" formControlName="estado" placeholder="Estado">
+                        </div>
+
+                      </div>
+                     
+                      <div class="mt-3">
+                          <button type="text" class="btn btn-primary" style="margin-right: 7px;">Volver</button>
+                          <button type="submit" class="btn btn-primary">Agregar</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+

@@ -1,0 +1,9 @@
+{
+    "/Home":{
+        "target":"https://apiaspcore.tuxcarlostorres.com/",
+        "secure":false,
+        "logLevel":"debug",
+        "changeOrigin":true
+    }
+  }
+  

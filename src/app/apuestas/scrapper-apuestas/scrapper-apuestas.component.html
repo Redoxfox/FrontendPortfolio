@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activos TI</title>
+</head>
+    <app-header></app-header>
+    <body>
+    <div class="col mt-4 p-3 border">
+      <div class="row ">
+        <div class="col">
+          <button type="button" class="btn btn-primary" (click)="save()">Registro Fecha</button>
+        </div>
+        <div class="col">
+          <!--<input type="text" class="form-control"  #idliga [(ngModel)]="idLiga" placeholder="Numero de liga">
+          {{idLiga}}
+          -->
+          <p>
+            <select name="miselect" [(ngModel)]="idLiga" class="form-select">
+            <option [value]="item.id" *ngFor="let item of this.itemListLeague ">{{item.pais}}</option>
+            </select>
+          </p>
+            
+        </div>
+        <div class="col">
+          <input type="text" class="form-control"  #urlfecha [(ngModel)]="urlFecha" placeholder="Url fecha liga">
+        </div>
+        <div class="col">
+          <i class="fas fa-search" style="margin-right: 15px;" (click)="searchApi()"></i>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4" >
+      <div class="card">
+          <div class="card-body">
+            <span class="h3">Lista Partidos</span>
+        <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">id</th>
+                  <th scope="col">Nro Fecha</th>
+                  <th scope="col">Liga</th>
+                  <th scope="col">Local</th>
+                  <th scope="col">Goles</th>
+                  <th scope="col">Visitante</th>
+                  <th scope="col">Goles</th>
+                  <th scope="col">Temporada</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Editar</th>
+                  <th scope="col">#Match</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of itemCalendario; let indice=index" >
+                  <td>{{item.id}}</td>
+                  <td>{{item.nro_fecha}}</td>
+                  <td>{{item.id_liga}}</td>
+                  <td>{{item.equipo_1}}</td>
+                  <td>{{item.gol_eq1}}</td>
+                  <td>{{item.equipo_2}}</td>
+                  <td>{{item.gol_eq2}}</td>
+                  <td>{{item.temporada}}</td>
+                  <td>{{item.fecha}}</td>
+                  <td>{{item.estado}}</td>
+                  <td>
+                    <i class="fas fa-edit text-info " style="margin-right: 7px;" (click)="EditarFila(item.id)"></i>
+                  </td>
+                  <td>
+                    {{indice + 1}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
+    
+    <div class="container mt-4" >
+      <div class="card">
+          <div class="card-body">
+            <span class="h3">Fechas</span>
+        <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#Fecha</th>
+                  <th scope="col">IdLiga</th>
+                  <th scope="col">Links</th>
+                  <th scope="col">Editar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of this.listRequest; let indice=index" >
+                  <td>{{indice + 1}}</td>
+                  <td>{{item.idLiga}}</td>
+                  <td>{{item.link}}</td>
+                  <td>
+                    <i class="fas fa-edit text-info " style="margin-right: 7px;" (click)="search(item.idLiga, item.link)"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
+
+
+</body>
+</html>
+
